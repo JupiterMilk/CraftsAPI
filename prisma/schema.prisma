@@ -16,9 +16,9 @@ model Category {
 
 model Order {
   id                 Int                  @default(autoincrement())
-  code               Int?
-  total_price        Decimal?             @db.Decimal(3, 0)
-  state              Int?
+  code               Int
+  total_price        Decimal              @db.Decimal(3, 0)
+  state              Int
   Users_id           Int
   Users              Users                @relation(fields: [Users_id], references: [id])
   Order_has_Products Order_has_Products[]
@@ -42,10 +42,9 @@ model Order_has_Products {
 
 model Products {
   id                 Int                  @default(autoincrement())
-  name               String?              @db.VarChar(70)
-  qte                Int?
-  price              Decimal?             @db.Decimal(3, 0)
-  Productscol        String?              @db.VarChar(45)
+  name               String               @db.VarChar(70)
+  qte                Int
+  price              Decimal              @db.Decimal(3, 0)
   admin_id           Int
   Category_id        Int
   Category           Category             @relation(fields: [Category_id], references: [id])
@@ -60,10 +59,10 @@ model Products {
 
 model Users {
   id       Int        @id @default(autoincrement())
-  name     String?    @db.VarChar(45)
-  email    String?    @db.VarChar(45)
-  password String?    @db.Text
-  role     Int?
+  name     String     @db.VarChar(45)
+  email    String     @db.VarChar(45)
+  password String     @db.Text
+  role     String     @default("user") @db.VarChar(11)
   phone    String?    @db.VarChar(45)
   Order    Order[]
   comments comments[]
@@ -71,17 +70,17 @@ model Users {
 
 model admin {
   id       Int        @id @default(autoincrement())
-  name     String?    @db.VarChar(45)
-  email    String?    @db.VarChar(45)
-  password String?    @db.Text
+  name     String     @db.VarChar(45)
+  email    String     @db.VarChar(45)
+  password String     @db.Text
   Products Products[]
 }
 
 model comments {
   id                   Int      @default(autoincrement())
-  name                 String?  @db.VarChar(45)
-  email                String?  @db.VarChar(45)
-  comment              String?  @db.Text
+  name                 String   @db.VarChar(45)
+  email                String   @db.VarChar(45)
+  comment              String   @db.Text
   Users_id             Int
   Products_id          Int
   Products_admin_id    Int
