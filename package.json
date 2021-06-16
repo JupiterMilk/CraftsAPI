@@ -13,7 +13,7 @@
     "format": "prettier --write .",
     "check-lint": "eslint . --ext js",
     "check-format": "prettier --check .",
-    "migrate": "npx prisma migrate dev --name newdb",
+    "migrate": "npx prisma migrate dev --name craft_site_api",
     "makemigrations": "npx prisma migrate dev --create-only",
     "pull": "npx prisma db pull",
     "generate": "npx prisma generate",
