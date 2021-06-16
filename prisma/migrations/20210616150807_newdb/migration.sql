@@ -1,22 +1,6 @@
-/*
-  Warnings:
-
-  - You are about to drop the `posts` table. If the table is not empty, all the data it contains will be lost.
-  - You are about to drop the `user` table. If the table is not empty, all the data it contains will be lost.
-
-*/
--- DropForeignKey
-ALTER TABLE `posts` DROP FOREIGN KEY `posts_ibfk_1`;
-
--- DropTable
-DROP TABLE `posts`;
-
--- DropTable
-DROP TABLE `user`;
-
 -- CreateTable
 CREATE TABLE `Category` (
-    `id` INTEGER NOT NULL,
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(45),
     `state` INTEGER,
 
@@ -25,7 +9,7 @@ CREATE TABLE `Category` (
 
 -- CreateTable
 CREATE TABLE `Order` (
-    `id` INTEGER NOT NULL,
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
     `code` INTEGER,
     `total_price` DECIMAL(3, 0),
     `state` INTEGER,
@@ -48,8 +32,8 @@ CREATE TABLE `Order_has_Products` (
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- CreateTable
-CREATE TABLE `products` (
-    `id` INTEGER NOT NULL,
+CREATE TABLE `Products` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(70),
     `qte` INTEGER,
     `price` DECIMAL(3, 0),
@@ -63,8 +47,8 @@ CREATE TABLE `products` (
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- CreateTable
-CREATE TABLE `users` (
-    `id` INTEGER NOT NULL,
+CREATE TABLE `Users` (
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(45),
     `email` VARCHAR(45),
     `password` TEXT,
@@ -76,7 +60,7 @@ CREATE TABLE `users` (
 
 -- CreateTable
 CREATE TABLE `admin` (
-    `id` INTEGER NOT NULL,
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(45),
     `email` VARCHAR(45),
     `password` TEXT,
@@ -86,7 +70,7 @@ CREATE TABLE `admin` (
 
 -- CreateTable
 CREATE TABLE `comments` (
-    `id` INTEGER NOT NULL,
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
     `name` VARCHAR(45),
     `email` VARCHAR(45),
     `comment` TEXT,
@@ -101,22 +85,22 @@ CREATE TABLE `comments` (
 ) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 -- AddForeignKey
-ALTER TABLE `Order` ADD FOREIGN KEY (`Users_id`) REFERENCES `users`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `Order` ADD FOREIGN KEY (`Users_id`) REFERENCES `Users`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE `Order_has_Products` ADD FOREIGN KEY (`Order_id`) REFERENCES `Order`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `Order_has_Products` ADD FOREIGN KEY (`Products_id`, `Products_admin_id`, `Products_Category_id`) REFERENCES `products`(`id`, `admin_id`, `Category_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `Order_has_Products` ADD FOREIGN KEY (`Products_id`, `Products_admin_id`, `Products_Category_id`) REFERENCES `Products`(`id`, `admin_id`, `Category_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `products` ADD FOREIGN KEY (`Category_id`) REFERENCES `Category`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `Products` ADD FOREIGN KEY (`Category_id`) REFERENCES `Category`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `products` ADD FOREIGN KEY (`admin_id`) REFERENCES `admin`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `Products` ADD FOREIGN KEY (`admin_id`) REFERENCES `admin`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `comments` ADD FOREIGN KEY (`Products_id`, `Products_admin_id`, `Products_Category_id`) REFERENCES `products`(`id`, `admin_id`, `Category_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `comments` ADD FOREIGN KEY (`Products_id`, `Products_admin_id`, `Products_Category_id`) REFERENCES `Products`(`id`, `admin_id`, `Category_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE `comments` ADD FOREIGN KEY (`Users_id`) REFERENCES `users`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `comments` ADD FOREIGN KEY (`Users_id`) REFERENCES `Users`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
