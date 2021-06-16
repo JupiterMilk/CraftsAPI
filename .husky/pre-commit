@@ -1,6 +1,15 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
+set -e
+
+branch="$(git rev-parse --abbrev-ref HEAD)"
+allBranch="$(git branch -a)"
+_user="$(id -u -n)"
+if [[ "$branch" = "master" && "$_user" != "b3ns44d" ]]; then
+    echo "$_user You can't commit directly to master branch but you can switch to one of those branches-> $allBranch"
+    exit 0
+fi
 echo '🏗️👷 Styling, testing and building your project before committing'
 yarn format
 # Check Prettier standards
