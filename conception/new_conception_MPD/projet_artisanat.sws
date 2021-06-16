@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?PowerDesigner signature="Workspace" version="16.7.1.6488"?>
+<!-- Veuillez ne pas modifier ce fichier -->
+
+<Workspace>
+	<Local Expanded="Yes" Name="projet_artisanat" Selected="Yes">
+		<Model Expanded="Yes" ID="{0CB99EE0-1552-45F0-BF07-7DFD97D11731}" Name="MCD" Type="{1E597170-9350-11D1-AB3C-0020AF71E433}" URL="MCD.mcd"/>
+		<Model Expanded="Yes" ID="{80BA85C9-87C8-4C7D-85B2-6543D0A1CA2B}" Name="MLD" Type="{5F45F978-C4F3-4E35-A3FC-AF3318663A0F}" URL="MLDetMCD.mld"/>
+	</Local>
+	<BrowserModule Name="Repository"/>
+</Workspace>
