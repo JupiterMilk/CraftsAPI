@@ -16,26 +16,24 @@ model admin {
 }
 
 model comments {
-  id                   Int      @default(autoincrement())
-  name                 String   @db.VarChar(45)
-  email                String   @db.VarChar(45)
-  comment              String   @db.Text
-  Users_id             Int
-  Products_id          Int
-  Products_admin_id    Int
-  Products_Category_id Int
-  products             products @relation(fields: [Products_id, Products_admin_id, Products_Category_id], references: [id, admin_id, Category_id])
-  users                users    @relation(fields: [Users_id], references: [id])
+  id          Int      @default(autoincrement())
+  name        String   @db.VarChar(45)
+  email       String   @db.VarChar(45)
+  comment     String   @db.Text
+  users_id    Int
+  products_id Int
+  products    products @relation(fields: [products_id], references: [id])
+  users       users    @relation(fields: [users_id], references: [id])
 
-  @@id([id, Users_id, Products_id, Products_admin_id, Products_Category_id])
-  @@index([Products_id, Products_admin_id, Products_Category_id], name: "fk_comments_Products1_idx")
-  @@index([Users_id], name: "fk_comments_Users_idx")
+  @@id([id, users_id, products_id])
+  @@index([products_id], name: "fk_comments_products1_idx")
+  @@index([users_id], name: "fk_comments_users1_idx")
 }
 
 model category {
   id       Int        @id @default(autoincrement())
-  name     String?    @db.VarChar(45)
-  state    Int?
+  name     String     @db.VarChar(45)
+  state    Int
   products products[]
 }
 
@@ -44,25 +42,12 @@ model order {
   code               Int
   total_price        Decimal              @db.Decimal(3, 0)
   state              Int
-  Users_id           Int
-  users              users                @relation(fields: [Users_id], references: [id])
-  order_has_Products order_has_Products[]
+  users_id           Int
+  users              users                @relation(fields: [users_id], references: [id])
+  products_has_order products_has_order[]
 
-  @@id([id, Users_id])
-  @@index([Users_id], name: "fk_Order_Users1_idx")
-}
-
-model order_has_Products {
-  Order_id             Int
-  Products_id          Int
-  Products_admin_id    Int
-  Products_Category_id Int
-  order                order    @relation(fields: [Order_id], references: [id])
-  products             products @relation(fields: [Products_id, Products_admin_id, Products_Category_id], references: [id, admin_id, Category_id])
-
-  @@id([Order_id, Products_id, Products_admin_id, Products_Category_id])
-  @@index([Order_id], name: "fk_Order_has_Products_Order1_idx")
-  @@index([Products_id, Products_admin_id, Products_Category_id], name: "fk_Order_has_Products_Products1_idx")
+  @@id([id, users_id])
+  @@index([users_id], name: "fk_order_users_idx")
 }
 
 model products {
@@ -71,15 +56,15 @@ model products {
   qte                Int
   price              Decimal              @db.Decimal(3, 0)
   admin_id           Int
-  Category_id        Int
-  category           category             @relation(fields: [Category_id], references: [id])
+  category_id        Int
   admin              admin                @relation(fields: [admin_id], references: [id])
+  category           category             @relation(fields: [category_id], references: [id])
   comments           comments[]
-  order_has_Products order_has_Products[]
+  products_has_order products_has_order[]
 
-  @@id([id, admin_id, Category_id])
-  @@index([Category_id], name: "fk_Products_Category1_idx")
-  @@index([admin_id], name: "fk_Products_admin1_idx")
+  @@id([id, admin_id, category_id])
+  @@index([admin_id], name: "fk_products_admin1_idx")
+  @@index([category_id], name: "fk_products_category1_idx")
 }
 
 model users {
@@ -87,8 +72,20 @@ model users {
   name     String     @db.VarChar(45)
   email    String     @db.VarChar(45)
   password String     @db.Text
-  role     String     @default("user") @db.VarChar(11)
+  role     Int
   phone    String?    @db.VarChar(45)
   comments comments[]
   order    order[]
+}
+
+model products_has_order {
+  products_id Int
+  order_id    Int
+  qte         Int
+  order       order    @relation(fields: [order_id], references: [id])
+  products    products @relation(fields: [products_id], references: [id])
+
+  @@id([products_id, order_id])
+  @@index([order_id], name: "fk_products_has_order_order1_idx")
+  @@index([products_id], name: "fk_products_has_order_products1_idx")
 }
