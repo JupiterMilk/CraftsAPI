@@ -1,0 +1,12 @@
+footer{
+    background-color: $primary;
+
+    form{
+        .form-control{
+            background-color: rgba($black,.3);
+            border: 1px solid rgba($black,.7);
+            margin-bottom: 8px;
+            border-radius: 16px;
+        }
+    }
+}
