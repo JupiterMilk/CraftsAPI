@@ -1,0 +1,48 @@
+.cart-paiment-img{
+    padding-left:26px !important;
+}
+.cart-paiment-img>img{
+    width: 13rem;
+    height: 3rem;
+}
+.card-paiment-body{
+    padding-left: 2rem !important;
+    height: auto;
+}
+.card-paiment{
+    text-align:center;
+    height:3rem;
+    border-radius:$radius;
+    font-family: $fontFamily;
+    background-color:#FF9900;
+}
+.btn-paiment{
+    width:$widht;
+    color: #fff;
+    background-color: #0090FF;
+    margin-top: 12rem;
+}
+.price{
+    color: $red;
+}
+.card-title{
+    font-size: $fontSize*1.4;
+
+}
+.list-paiment-body{
+    margin-top:1rem;
+    box-shadow: rgba($primary,.3) 0px 3px 8px;
+    &:hover{
+        background-color: $primary;
+        border-radius:$radius;
+        color: $white;
+        a{
+            color:$white ;
+        }
+        
+    }
+}
+
+.fa-shopping-cart{
+    color: $primary;
+}

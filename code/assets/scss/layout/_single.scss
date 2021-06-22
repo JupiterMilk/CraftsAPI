@@ -1,0 +1,25 @@
+.single-header{
+    padding-top: 16px;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    nav{
+        li{
+            font-size: 1.5rem;
+        }
+    }
+    .bg-effect{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 90%;
+        z-index: -1;
+        opacity: .5;
+    }
+}
+.comment-avatar{
+    img{
+        border: 3px solid $primary;
+    }
+}
