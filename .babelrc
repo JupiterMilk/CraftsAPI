@@ -3,14 +3,17 @@
     [
       "module-resolver",
       {
-        "root": ["."],
+        "root": [
+          "."
+        ],
         "alias": {
           "@test": "./src/__tests__",
           "@config": "./src/config",
           "@routes": "./lib/routes/",
           "@controllers": "./lib/Controllers",
           "@middleware": "./lib/middleware",
-          "@auth": "./lib/auth"
+          "@auth": "./lib/auth",
+          "@utils": "./src/utils"
         }
       }
     ]

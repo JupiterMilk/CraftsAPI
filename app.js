@@ -1,15 +1,18 @@
-const express = require('express')
-const app = express()
-const bodyParser = require('body-parser')
+const express = require('express'),
+  app = express(),
+  fs = require('fs'),
+  morgan = require('morgan')
 
 app.use(
-  bodyParser.urlencoded({
-    extended: true,
+  morgan('combined', {
+    stream: fs.createWriteStream('./app.log', { flags: 'a' }),
   })
 )
-app.use(bodyParser.json())
+app.use(morgan('combined'))
+app.enable('trust proxy')
+app.use(express.json({ type: '*/*' }))
 
-app.get('/', (req, res, next) => {
+app.get('/', (req, res) => {
   res.status(200).send('Root home')
 })
 

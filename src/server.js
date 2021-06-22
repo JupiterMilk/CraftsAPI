@@ -1,9 +1,8 @@
 const app = require('app')
 const userRouter = require('@routes/user.routes.js')
-// const customerRouter = require('@routes/customer.routes.js')
+const customerRouter = require('@routes/customer.routes.js')
 const { databaseURL, port } = require('@config/index')
 const cors = require('cors')
-const morgan = require('morgan')
 // const bp = require('body-parser')
 
 const corsOptions = {
@@ -14,22 +13,13 @@ const corsOptions = {
 // app.use(bp.urlencoded({ extended: true }))
 
 app.use(cors(corsOptions))
-app.use(morgan('tiny'))
 app.set('json spaces', 2)
 
 app.use('/user', userRouter)
 
-// app.use('/customer', customerRouter)
-
-// app.use((req, res, next) => {
-//   console.log('Time:', Date.now())
-//   next()
-// })
-// app.use('/', (req, res, next) => {
-//   console.log('Request Type:', req.method)
-//   next()
-// })
+app.use('/customer', customerRouter)
 
 app.listen(port, () => {
   console.log(`app listening on port http://${databaseURL}:${port}`)
+  console.log('Press Ctrl+C to quit.')
 })
