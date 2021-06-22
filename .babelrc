@@ -3,9 +3,7 @@
     [
       "module-resolver",
       {
-        "root": [
-          "."
-        ],
+        "root": ["."],
         "alias": {
           "@test": "./src/__tests__",
           "@config": "./src/config",
