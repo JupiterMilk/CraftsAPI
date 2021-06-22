@@ -2,7 +2,7 @@
     padding-left:26px !important;
 }
 .cart-paiment-img>img{
-    width: 13rem;
+    width: 12rem;
     height: 3rem;
 }
 .card-paiment-body{
@@ -31,16 +31,16 @@
 }
 .list-paiment-body{
     margin-top:1rem;
-    box-shadow: rgba($primary,.3) 0px 3px 8px;
-    &:hover{
-        background-color: $primary;
-        border-radius:$radius;
-        color: $white;
-        a{
-            color:$white ;
-        }
+    // box-shadow: rgba($primary,.3) 0px 3px 8px;
+    // &:hover{
+    //     background-color: $primary;
+    //     border-radius:$radius;
+    //     color: $white;
+    //     a{
+    //         color:$white ;
+    //     }
         
-    }
+    // }
 }
 
 .fa-shopping-cart{
