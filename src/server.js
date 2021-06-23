@@ -6,14 +6,26 @@ const cors = require('cors')
 // const bp = require('body-parser')
 
 const corsOptions = {
-  origin: 'http://localhost:3004',
+  origin: 'http://localhost:8080',
 }
-
+// const corsOptions = {
+//   origin: (origin, callback) => {
+//     if (whitelist.indexOf(origin) !== -1) {
+//       callback(null, true)
+//     } else {
+//       callback(new Error())
+//     }
+//   }
+// }
 // app.use(bp.json())
 // app.use(bp.urlencoded({ extended: true }))
 
 app.use(cors(corsOptions))
 app.set('json spaces', 2)
+
+app.get('/', (req, res) => {
+  res.status(200).send('hello mother fucker how are you doing ')
+})
 
 app.use('/user', userRouter)
 
