@@ -60,6 +60,9 @@ model products {
   id                 Int                  @default(autoincrement())
   name               String               @db.VarChar(70)
   qte                Int
+  description        String               @db.LongText
+  image              String               @db.LongText
+  sale               Boolean              @default(false)
   price              String               @db.VarChar(7)
   admin_id           Int
   category_id        Int
