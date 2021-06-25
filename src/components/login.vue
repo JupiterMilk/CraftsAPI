@@ -1,0 +1,145 @@
+<template>
+    <div>
+        <header class="login-header vh-100 w-100">
+      <img class="bg-effect" alt="" />
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <nav class="navbar navbar-expand-lg">
+              <a class="navbar-brand" href="#"
+                ><img
+                  class="d-md-block d-none"
+                  src="/logo.2da8e07c.png"
+                  alt="logo"
+              /></a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="m-auto mb-2 mb-lg-0 navbar-nav">
+                  <li class="mx-3 nav-item">
+                    <a class="active nav-link" aria-current="page" href="#"
+                      >Home</a
+                    >
+                  </li>
+                  <li class="mx-3 nav-item">
+                    <a class="nav-link" href="#">Shop</a>
+                  </li>
+                  <li class="mx-3 nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                  </li>
+                  <li class="mx-3 nav-item">
+                    <a class="nav-link" href="#">About us</a>
+                  </li>
+                </ul>
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="cart-icon mx-4 nav-link text-red" href="#"
+                      ><i class="fa fa-shopping-cart"></i
+                      ><span class="cart-badge">1</span></a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <img
+        style="position:fixed;left:0;bottom:0;height:80%;z-index:-1;"
+        src="/home-header-pattern.e8d1e471.png"
+      />
+      <div class="container">
+        <div class="mt-5 row">
+          <div class="col d-grid gap-1">
+            <div class="bg-white border p-4 shadow">
+              <h3>Signup:</h3>
+              <form>
+                <div class="form-group">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="name"
+                    placeholder="Name..."
+                    required
+                  /><br />
+                </div>
+                <div class="form-group">
+                  <input
+                    class="form-control"
+                    type="text"
+                    name="password"
+                    placeholder="Email..."
+                    required
+                  /><br />
+                </div>
+                <div class="form-group">
+                  <input
+                    class="form-control"
+                    type="password"
+                    name="email"
+                    placeholder="Password..."
+                    required
+                  /><br />
+                </div>
+                <div class="form-group">
+                  <input
+                    class="form-control"
+                    type="password"
+                    name="Cpassword"
+                    placeholder="Confirme password..."
+                    required
+                  /><br />
+                </div>
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary">Signup</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col d-grid gap-3 p-inline-end-5">
+            <div class="bg-white border p-4 shadow">
+              <h3>Login:</h3>
+              <div class="form-group">
+                <input
+                  class="form-control"
+                  type="text"
+                  name="email"
+                  placeholder="Email..."
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  class="form-control"
+                  type="password"
+                  name="password"
+                  placeholder="Password..."
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-block btn-primary">
+                  Login
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    </div>
+</template>
+<script>
+export default {
+    
+}
+</script>
