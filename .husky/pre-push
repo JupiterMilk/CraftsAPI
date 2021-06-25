@@ -17,11 +17,11 @@ if [[ "$branch" = "master" && "$_user" != "b3ns44d" ]]; then
     exit 0
 fi
 
-echo '🏗️ Pulling shit out wait a moment please'
-git pull origin master ||
-    (
-        echo '🤢🤮🤢🤮 SHIIIT BRO - Your brnach need some fixing. try to fix it and try again'
-        false
-    )
+# echo '🏗️ Pulling shit out wait a moment please'
+# git pull origin master ||
+#     (
+#         echo '🤢🤮🤢🤮 SHIIIT BRO - Your brnach need some fixing. try to fix it and try again'
+#         false
+#     )
 # If everything passes... Now we can push
 echo '✅✅✅✅ everything looks good pushing your shit now. ✅✅✅✅'
