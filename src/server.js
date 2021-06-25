@@ -1,6 +1,8 @@
 const app = require('app')
 const userRouter = require('@routes/user.routes.js')
 const customerRouter = require('@routes/customer.routes.js')
+const categoriesRouter = require('@routes/categories.routes.js')
+const authRouter = require('@routes/auth.routes.js')
 const { databaseURL, port } = require('@config/index')
 const cors = require('cors')
 // const bp = require('body-parser')
@@ -30,6 +32,10 @@ app.get('/', (req, res) => {
 app.use('/user', userRouter)
 
 app.use('/customer', customerRouter)
+
+app.use('/categories', categoriesRouter)
+
+app.use('/auth', authRouter)
 
 app.listen(port, () => {
   console.log(`app listening on port http://${databaseURL}:${port}`)
