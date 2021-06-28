@@ -148,20 +148,20 @@
               </div>
               <div class="align-items-center d-flex mb-3 stock">
                 <div class="m-2 pick">
-                  <span @click="substractQte()"
+                  <button @click="substractQte()"
                     style="cursor:pointer;"
-                    class="bg-secondary m px-3 py-2 rounded subs text-white"
-                    >-</span
+                    class="border-0 bg-secondary px-3 py-2 rounded subs text-white"
+                    >-</button
                   >
                   <input class="bg-light border-0 p-0 w-25 text-center count m px-3 py-2 rounded text-dark"
                     v-model="qte" />
-                  <span @click="addQte()"
+                  <button @click="addQte()"
                     style="cursor:pointer;"
-                    class="add bg-primary m px-3 py-2 rounded text-white"
-                    >+</span
+                    class="border-0 add bg-primary px-3 py-2 rounded text-white"
+                    >+</button
                   >
                 </div>
-                <div class="stock-count text-warning">{{ stock }} in stock</div>
+                <div :class="sotckLevel" class="stock-count text-left">Only {{ stock }} left in stock</div>
               </div>
               <div class="actions d-flex">
                 <a class="bg-blue btn btn-lg btn-primary m-2"
@@ -463,23 +463,30 @@ export default {
         description : "",
         comments : "",
         qte : 0,
-        stock : 50
+        stock : 99,
+        sotckLevel : "text-info"
       }
     },
     created(){
+
+      // Stock color manager
+      if(this.stock <= 50) this.sotckLevel = "text-danger"
+      if(this.stock > 50 && this.stock <= 100) this.sotckLevel = "text-warning"
+      if(this.stock > 100) this.sotckLevel = "text-success"
+
+      // get product id
       this.id = this.$route.params.id
       console.log('Product id: '+this.id);
     },
     methods:{
         substractQte(){
-        if(this.qte > 0){
-          --this.qte;
-          
+          if(this.qte > 0){
+            --this.qte;
+          }
+        },
+        addQte(){
+          ++this.qte;
         }
-      },
-       addQte(){
-        ++this.qte;
-      }
     }
 }
 </script>
