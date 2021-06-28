@@ -25,9 +25,10 @@ const routes = [
         component: VerifyEmail
     },
     {
-        path : '/single',
+        path: '/single',
         component: single
     }
 ]
+
 
 export default routes
