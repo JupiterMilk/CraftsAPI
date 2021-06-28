@@ -181,7 +181,29 @@
 
 <script>
 export default {
-  
+<<<<<<< HEAD
+  data : ()=>{
+    return {
+      products : []
+    }
+  },
+  created(){
+    
+  }
+=======
+      data : function(){
+      return {
+        cart:{
+        id         : '',
+        title      : "",
+        qte        :0,
+        price      :0,
+        priceTotal :0,
+      }
+      }
+
+    },
+>>>>>>> 34b0366107469f48e25ca4eb782048364e6c510a
 }
 </script>
 
