@@ -468,7 +468,6 @@ export default {
       }
     },
     created(){
-
       // Stock color manager
       if(this.stock <= 50) this.sotckLevel = "text-danger"
       if(this.stock > 50 && this.stock <= 100) this.sotckLevel = "text-warning"
@@ -479,7 +478,7 @@ export default {
       console.log('Product id: '+this.id);
     },
     methods:{
-        substractQte(){
+        substractQte(id){
           if(this.qte > 0){
             --this.qte;
           }

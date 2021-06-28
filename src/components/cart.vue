@@ -181,7 +181,14 @@
 
 <script>
 export default {
-  
+  data : ()=>{
+    return {
+      products : []
+    }
+  },
+  created(){
+    
+  }
 }
 </script>
 
