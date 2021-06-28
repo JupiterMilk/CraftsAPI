@@ -166,310 +166,9 @@
         </div>
         <div class="container">
           <div class="row">
-            <div class="col">
               <div class="grid">
-                <div class="item">
-                  <div class="bg-white product-card">
-                    <div class="thumbnail">
-                      <a href="#">
-                        <img
-                          src="/product.708685fd.png"
-                          class="img img-responsive w-100"
-                          alt=""
-                        />
-                      </a>
-                      <span class="sale">Sale</span>
-                      <span class="add-to-cart" data-id="1"
-                        ><i class="fa fa-cart-arrow-down" aria-hidden="true"></i
-                      ></span>
-                    </div>
-                    <div class="details p-3 text-left w-100">
-                      <h2 class="h4 text-primary">
-                        <a href="#">Dummy product title</a>
-                      </h2>
-                      <p class="small">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="bg-white product-card">
-                    <div class="thumbnail">
-                      <a href="#">
-                        <img
-                          src="/product.708685fd.png"
-                          class="img img-responsive w-100"
-                          alt=""
-                        />
-                      </a>
-                      <span class="sale">Sale</span>
-                      <span class="add-to-cart" data-id="1"
-                        ><i class="fa fa-cart-arrow-down" aria-hidden="true"></i
-                      ></span>
-                    </div>
-                    <div class="details p-3 text-left w-100">
-                      <h2 class="h4 text-primary">
-                        <a href="#">Dummy product title</a>
-                      </h2>
-                      <p class="small">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="bg-white product-card">
-                    <div class="thumbnail">
-                      <a href="#">
-                        <img
-                          src="/product.708685fd.png"
-                          class="img img-responsive w-100"
-                          alt=""
-                        />
-                      </a>
-                      <span class="sale">Sale</span>
-                      <span class="add-to-cart" data-id="1"
-                        ><i class="fa fa-cart-arrow-down" aria-hidden="true"></i
-                      ></span>
-                    </div>
-                    <div class="details p-3 text-left w-100">
-                      <h2 class="h4 text-primary">
-                        <a href="#">Dummy product title</a>
-                      </h2>
-                      <p class="small">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="bg-white product-card">
-                    <div class="thumbnail">
-                      <a href="#">
-                        <img
-                          src="/product.708685fd.png"
-                          class="img img-responsive w-100"
-                          alt=""
-                        />
-                      </a>
-                      <span class="sale">Sale</span>
-                      <span class="add-to-cart" data-id="1"
-                        ><i class="fa fa-cart-arrow-down" aria-hidden="true"></i
-                      ></span>
-                    </div>
-                    <div class="details p-3 text-left w-100">
-                      <h2 class="h4 text-primary">
-                        <a href="#">Dummy product title</a>
-                      </h2>
-                      <p class="small">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="bg-white product-card">
-                    <div class="thumbnail">
-                      <a href="#">
-                        <img
-                          src="/product.708685fd.png"
-                          class="img img-responsive w-100"
-                          alt=""
-                        />
-                      </a>
-                      <span class="sale">Sale</span>
-                      <span class="add-to-cart" data-id="1"
-                        ><i class="fa fa-cart-arrow-down" aria-hidden="true"></i
-                      ></span>
-                    </div>
-                    <div class="details p-3 text-left w-100">
-                      <h2 class="h4 text-primary">
-                        <a href="#">Dummy product title</a>
-                      </h2>
-                      <p class="small">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="bg-white product-card">
-                    <div class="thumbnail">
-                      <a href="#">
-                        <img
-                          src="/product.708685fd.png"
-                          class="img img-responsive w-100"
-                          alt=""
-                        />
-                      </a>
-                      <span class="sale">Sale</span>
-                      <span class="add-to-cart" data-id="1"
-                        ><i class="fa fa-cart-arrow-down" aria-hidden="true"></i
-                      ></span>
-                    </div>
-                    <div class="details p-3 text-left w-100">
-                      <h2 class="h4 text-primary">
-                        <a href="#">Dummy product title</a>
-                      </h2>
-                      <p class="small">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="bg-white product-card">
-                    <div class="thumbnail">
-                      <a href="#">
-                        <img
-                          src="/product.708685fd.png"
-                          class="img img-responsive w-100"
-                          alt=""
-                        />
-                      </a>
-                      <span class="sale">Sale</span>
-                      <span class="add-to-cart" data-id="1"
-                        ><i class="fa fa-cart-arrow-down" aria-hidden="true"></i
-                      ></span>
-                    </div>
-                    <div class="details p-3 text-left w-100">
-                      <h2 class="h4 text-primary">
-                        <a href="#">Dummy product title</a>
-                      </h2>
-                      <p class="small">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="bg-white product-card">
-                    <div class="thumbnail">
-                      <a href="#">
-                        <img
-                          src="/product.708685fd.png"
-                          class="img img-responsive w-100"
-                          alt=""
-                        />
-                      </a>
-                      <span class="sale">Sale</span>
-                      <span class="add-to-cart" data-id="1"
-                        ><i class="fa fa-cart-arrow-down" aria-hidden="true"></i
-                      ></span>
-                    </div>
-                    <div class="details p-3 text-left w-100">
-                      <h2 class="h4 text-primary">
-                        <a href="#">Dummy product title</a>
-                      </h2>
-                      <p class="small">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="product-carde">
-                    <div class="thumbnail">
-                      <a href="#">
-                        <img
-                          src="/product.708685fd.png"
-                          class="img img-responsive w-100"
-                          alt=""
-                        />
-                      </a>
-                      <span class="sale">Sale</span>
-                      <span class="add-to-cart" data-id="1"
-                        ><i class="fa fa-cart-arrow-down" aria-hidden="true"></i
-                      ></span>
-                    </div>
-                    <div class="details p-3 text-left w-100">
-                      <h2 class="h4 text-primary">
-                        <a href="#">Dummy product title</a>
-                      </h2>
-                      <p class="small">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="product-carde">
-                    <div class="thumbnail">
-                      <a href="#">
-                        <img
-                          src="/product.708685fd.png"
-                          class="img img-responsive w-100"
-                          alt=""
-                        />
-                      </a>
-                      <span class="sale">Sale</span>
-                      <span class="add-to-cart" data-id="1"
-                        ><i class="fa fa-cart-arrow-down" aria-hidden="true"></i
-                      ></span>
-                    </div>
-                    <div class="details p-3 text-left w-100">
-                      <h2 class="h4 text-primary">
-                        <a href="#">Dummy product title</a>
-                      </h2>
-                      <p class="small">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="product-carde">
-                    <div class="thumbnail">
-                      <a href="#">
-                        <img
-                          src="/product.708685fd.png"
-                          class="img img-responsive w-100"
-                          alt=""
-                        />
-                      </a>
-                      <span class="sale">Sale</span>
-                      <span class="add-to-cart" data-id="1"
-                        ><i class="fa fa-cart-arrow-down" aria-hidden="true"></i
-                      ></span>
-                    </div>
-                    <div class="details p-3 text-left w-100">
-                      <h2 class="h4 text-primary">
-                        <a href="#">Dummy product title</a>
-                      </h2>
-                      <p class="small">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="product-carde">
-                    <div class="thumbnail">
-                      <a href="#">
-                        <img
-                          src="/product.708685fd.png"
-                          class="img img-responsive w-100"
-                          alt=""
-                        />
-                      </a>
-                      <span class="sale">Sale</span>
-                      <span class="add-to-cart" data-id="1"
-                        ><i class="fa fa-cart-arrow-down" aria-hidden="true"></i
-                      ></span>
-                    </div>
-                    <div class="details p-3 text-left w-100">
-                      <h2 class="h4 text-primary">
-                        <a href="#">Dummy product title</a>
-                      </h2>
-                      <p class="small">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                <productCard isSale title="sdfqdsfdqsd" description="dfsdgfsdgf" imgUrl="qsfcsdf" v-for="(prodcut,index) in products" :key="index" :id="index"/>
               </div>
-            </div>
           </div>
         </div>
       </section>
@@ -543,10 +242,26 @@
     </div>
 </template>
 <script>
-import Menu from './core-components/menu.vue';
+import Menu from '@/components/core-components/menu.vue';
+import productCard from '@/components/core-components/product-card'
 export default {
+  data : ()=>{
+    return {
+      products : [
+        "qsfqs",
+        "qsfqs",
+        "qsfqs",
+        "qsfqs",
+        "qsfqs",
+        "qsfqs",
+        "qsfqs",
+        "qsfqs"
+      ]
+    }
+  },
     components:{
-      Menu
+      Menu,
+      productCard
     }
 }
 </script>
