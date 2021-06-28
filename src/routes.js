@@ -25,7 +25,7 @@ const routes = [
         component: VerifyEmail
     },
     {
-        path : '/single',
+        path : '/product/:id',
         component: single
     }
 ]

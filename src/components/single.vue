@@ -148,21 +148,20 @@
               </div>
               <div class="align-items-center d-flex mb-3 stock">
                 <div class="m-2 pick">
-                  <span
+                  <span @click="substractQte()"
                     style="cursor:pointer;"
                     class="bg-secondary m px-3 py-2 rounded subs text-white"
                     >-</span
                   >
-                  <span class="bg-light count m px-3 py-2 rounded text-dark"
-                    >1</span
-                  >
-                  <span
+                  <input class="bg-light border-0 p-0 w-25 text-center count m px-3 py-2 rounded text-dark"
+                    v-model="qte" />
+                  <span @click="addQte()"
                     style="cursor:pointer;"
                     class="add bg-primary m px-3 py-2 rounded text-white"
                     >+</span
                   >
                 </div>
-                <div class="stock-count text-warning">50 in stock</div>
+                <div class="stock-count text-warning">{{ stock }} in stock</div>
               </div>
               <div class="actions d-flex">
                 <a class="bg-blue btn btn-lg btn-primary m-2"
@@ -457,7 +456,31 @@
 
 <script>
 export default {
-    
+    data : function(){
+      return {
+        id : '',
+        title : "",
+        description : "",
+        comments : "",
+        qte : 0,
+        stock : 50
+      }
+    },
+    created(){
+      this.id = this.$route.params.id
+      console.log('Product id: '+this.id);
+    },
+    methods:{
+        substractQte(){
+        if(this.qte > 0){
+          --this.qte;
+          
+        }
+      },
+       addQte(){
+        ++this.qte;
+      }
+    }
 }
 </script>
 
