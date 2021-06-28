@@ -181,7 +181,18 @@
 
 <script>
 export default {
-  
+      data : function(){
+      return {
+        cart:{
+        id         : '',
+        title      : "",
+        qte        :0,
+        price      :0,
+        priceTotal :0,
+      }
+      }
+
+    },
 }
 </script>
 
