@@ -4,3 +4,15 @@ node_js:
 cache:
   directories:
     - "node_modules"
+
+
+os:
+  - ubuntu
+language: node_js
+node_js:
+  - "stable"
+install:
+  - npm install -g yarn
+  - npm install
+script:
+  - yarn test
