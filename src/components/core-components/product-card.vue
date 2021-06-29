@@ -5,13 +5,13 @@
             <div class="thumbnail">
                 <router-link :to="{path: '/product/' + id}" class="nav-link">
                 <img
-                    src="/product.708685fd.png"
+                    :src="imageUrl"
                     class="img img-responsive w-100"
                     alt=""
                 />
                 </router-link>
                 <span v-if="isSale == true" class="sale">Sale</span>
-                <span @click="addtoCart(id)" class="add-to-cart" data-id="1"
+                <span @click="addtoCart(id)" class="add-to-cart"
                 ><i class="fa fa-cart-arrow-down" aria-hidden="true"></i
                 ></span>
             </div>

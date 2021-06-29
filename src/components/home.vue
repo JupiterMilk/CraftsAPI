@@ -54,24 +54,8 @@
           <div class="row">
             <div class="col">
               <div class="grid">
-                <div class="item">
-                  <img
-                    class="img img-responsive w-100"
-                    src="/home-category-1.7ed9fc51.png"
-                    alt=""
-                  />
-                  <div class="details p-3 text-center">
-                    <h2 class="text-white">Hand crafted</h2>
-                    <p class="mb-3 text-white">
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                      Aut error illum aliquid quo ipsum voluptates, voluptas
-                      tempore illo minus beatae qui maxime rerum omnis pariatur
-                      dolor minima laudantium magni ipsam!
-                    </p>
-                    <a href="#" class="btn btn-light">Discover</a>
-                  </div>
-                </div>
-                <div class="item">
+                <categotyCard v-for="(category,index) in categories" :key="index" :title="category.name" :description="category.description" :image="category.image" :id="category.id" />
+                <!-- <div class="item">
                   <img
                     class="img img-responsive w-100"
                     src="/home-category-2.64ff63f9.png"
@@ -138,7 +122,7 @@
                     </p>
                     <a href="#" class="btn btn-light">Discover</a>
                   </div>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
@@ -167,12 +151,12 @@
         <div class="container">
           <div class="row">
               <div class="grid">
-                <productCard isSale title="sdfqdsfdqsd" description="dfsdgfsdgf" imgUrl="qsfcsdf" v-for="(prodcut,index) in products" :key="index" :id="index"/>
+                <productCard :isSale="prodcut.sale" :title="prodcut.name" :description="prodcut.description" :imageUrl="prodcut.image" v-for="(prodcut,index) in products" :key="index" :id="prodcut.id"/>
               </div>
           </div>
         </div>
       </section>
-      <section class="home-shop">
+      <!-- <section class="home-shop">
         <div class="container">
           <div class="row">
             <div class="col-8 mx-auto my-5">
@@ -237,32 +221,45 @@
             </div>
           </div>
         </div>
-      </section>
+      </section> -->
     </main>
     </div>
 </template>
 <script>
+import axios from 'axios'
 import Menu from '@/components/core-components/menu.vue';
-import productCard from '@/components/core-components/product-card'
+import productCard from '@/components/core-components/product-card';
+import categotyCard from '@/components/core-components/category-card';
 export default {
   data : ()=>{
     return {
-      products : [
-        "qsfqs",
-        "qsfqs",
-        "qsfqs",
-        "qsfqs",
-        "qsfqs",
-        "qsfqs",
-        "qsfqs",
-        "qsfqs"
-      ]
+      products : [],
+      categories : []
     }
   },
     components:{
       Menu,
-      productCard
+      productCard,
+      categotyCard
+  },
+  created() {
+    this.getProductData()
+    this.getCategories()
+  },
+  methods:{
+    async getProductData(){
+      await axios.get(`${process.env.VUE_APP_ABS_API}/customer/product/`)
+      .then( (response) => {
+        // console.log(response.data);
+        this.products = response.data
+      })
+    },
+    async getCategories(){
+      await axios.get(`${process.env.VUE_APP_ABS_API}/categories/all/5`).then((responce) =>{
+        this.categories = responce.data
+      })
     }
+  }
 }
 </script>
 <style lang="css">
