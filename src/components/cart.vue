@@ -69,9 +69,7 @@
               <div class="row">
                 <div class="col-12 col-lg-7 col-md-12 d-flex">
                   <div class="card-body">
-                    <Paiment id="1" title="fsdxvvdsg" price="4556" img="Rectangle 37.a8e0979a.png" />
-                   
-                  
+                    <Paiment v-for="(prodcut,index) in carProducts" :key="index" :parentHandler="countTotal" :id="prodcut.id" :qte="prodcut.qte" />
                   </div>
                 </div>
                 <div class="col-lg-4 col-md-12 mb-3 mt-5">
@@ -80,7 +78,7 @@
                       class="align-items-center card-paiment d-flex justify-content-between p-3"
                     >
                       <h3 class="m-1">Total Cart :</h3>
-                      <h3 class="m-1 price">200$</h3>
+                      <h3 class="m-1 price">{{ totalCart }}$</h3>
                     </div>
                     <p class="card-text mt-2">
                       Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
@@ -105,20 +103,33 @@
 </template>
 
 <script>
+import axios from 'axios';
 import Paiment from './core-components/cart-paiment.vue';
 
 export default {
   data : ()=>{
     return {
-      products : []
+      carProducts : [],
+      totalCart:0,
     }
   },
   created(){
-    
+    this.getCartData()
   },
-    components:{
-      Paiment
+  components:{
+    Paiment
+  },
+  methods:{
+    getCartData(){
+      let cart = window.localStorage.getItem('cart');
+      cart = JSON.parse(cart)
+      this.carProducts = cart
+    },
+    countTotal(price){
+      this.total += price
     }
+
+  }
 
 }
 </script>
