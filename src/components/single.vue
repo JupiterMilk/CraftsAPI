@@ -141,8 +141,7 @@
           <div class="row">
             <div class="col text-primary">
               <h2>Comments:</h2>
-              <form
-                action="#"
+              <form v-on:submit.prevent="onSubmit"
                 method="post"
                 class="bg-light border px-2 py-5 rounded"
               >
@@ -151,14 +150,14 @@
                     <input
                       type="text"
                       class="form-control form-control-lg"
-                      placeholder="Name..."
+                      placeholder="Name..." v-model="commentName"
                     />
                   </div>
                   <div class="col-6 form-group mb-3">
                     <input
                       type="text"
                       class="form-control form-control-lg"
-                      placeholder="Email..."
+                      placeholder="Email..." v-model="commentEmail"
                     />
                   </div>
                 </div>
@@ -167,11 +166,11 @@
                     name="#"
                     id="#"
                     class="form-control form-control-lg text-primary"
-                    placeholder="Comment..."
+                    placeholder="Comment..." v-model="commentMessage"
                   ></textarea>
                 </div>
                 <div class="d-flex form-group mb-3">
-                  <button type="submit" class="btn btn-lg btn-primary px-5">
+                  <button type="submit" @click="addComment()" class="btn btn-lg btn-primary px-5">
                     Send
                   </button>
                 </div>
@@ -183,162 +182,7 @@
       <section>
         <div class="container">
           <div class="row">
-            <div class="col-12 mb-3">
-              <div class="m-0 row">
-                <div class="col-auto">
-                  <div class="comment-avatar">
-                    <img
-                      src="/avatar.1a6ff6ea.png"
-                      alt=""
-                      class="img img-responsive rounded-circle"
-                    />
-                  </div>
-                </div>
-                <div class="col text-primary">
-                  <div class="comment-details">
-                    <h2>Dummy username</h2>
-                    <span>dummyemail@email.com</span>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                      Facilis possimus dicta minus neque sit placeat expedita
-                      cumque debitis dolore doloremque nesciunt, illum provident
-                      obcaecati enim recusandae adipisci commodi, natus
-                      perferendis.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 mb-3">
-              <div class="m-0 row">
-                <div class="col-auto">
-                  <div class="comment-avatar">
-                    <img
-                      src="/avatar.1a6ff6ea.png"
-                      alt=""
-                      class="img img-responsive rounded-circle"
-                    />
-                  </div>
-                </div>
-                <div class="col text-primary">
-                  <div class="comment-details">
-                    <h2>Dummy username</h2>
-                    <span>dummyemail@email.com</span>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                      Facilis possimus dicta minus neque sit placeat expedita
-                      cumque debitis dolore doloremque nesciunt, illum provident
-                      obcaecati enim recusandae adipisci commodi, natus
-                      perferendis.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 mb-3">
-              <div class="m-0 row">
-                <div class="col-auto">
-                  <div class="comment-avatar">
-                    <img
-                      src="/avatar.1a6ff6ea.png"
-                      alt=""
-                      class="img img-responsive rounded-circle"
-                    />
-                  </div>
-                </div>
-                <div class="col text-primary">
-                  <div class="comment-details">
-                    <h2>Dummy username</h2>
-                    <span>dummyemail@email.com</span>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                      Facilis possimus dicta minus neque sit placeat expedita
-                      cumque debitis dolore doloremque nesciunt, illum provident
-                      obcaecati enim recusandae adipisci commodi, natus
-                      perferendis.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 mb-3">
-              <div class="m-0 row">
-                <div class="col-auto">
-                  <div class="comment-avatar">
-                    <img
-                      src="/avatar.1a6ff6ea.png"
-                      alt=""
-                      class="img img-responsive rounded-circle"
-                    />
-                  </div>
-                </div>
-                <div class="col text-primary">
-                  <div class="comment-details">
-                    <h2>Dummy username</h2>
-                    <span>dummyemail@email.com</span>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                      Facilis possimus dicta minus neque sit placeat expedita
-                      cumque debitis dolore doloremque nesciunt, illum provident
-                      obcaecati enim recusandae adipisci commodi, natus
-                      perferendis.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 mb-3">
-              <div class="m-0 row">
-                <div class="col-auto">
-                  <div class="comment-avatar">
-                    <img
-                      src="/avatar.1a6ff6ea.png"
-                      alt=""
-                      class="img img-responsive rounded-circle"
-                    />
-                  </div>
-                </div>
-                <div class="col text-primary">
-                  <div class="comment-details">
-                    <h2>Dummy username</h2>
-                    <span>dummyemail@email.com</span>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                      Facilis possimus dicta minus neque sit placeat expedita
-                      cumque debitis dolore doloremque nesciunt, illum provident
-                      obcaecati enim recusandae adipisci commodi, natus
-                      perferendis.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 mb-3">
-              <div class="m-0 row">
-                <div class="col-auto">
-                  <div class="comment-avatar">
-                    <img
-                      src="/avatar.1a6ff6ea.png"
-                      alt=""
-                      class="img img-responsive rounded-circle"
-                    />
-                  </div>
-                </div>
-                <div class="col text-primary">
-                  <div class="comment-details">
-                    <h2>Dummy username</h2>
-                    <span>dummyemail@email.com</span>
-                    <p>
-                      Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                      Facilis possimus dicta minus neque sit placeat expedita
-                      cumque debitis dolore doloremque nesciunt, illum provident
-                      obcaecati enim recusandae adipisci commodi, natus
-                      perferendis.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <commentCard v-for="(comment,index) in comments" :name="comment.name" :email="comment.email" :comment="comment.comment" :key="index"/>
           </div>
         </div>
       </section>
@@ -348,19 +192,26 @@
 
 <script>
 import axios from 'axios'
+import commentCard from './core-components/comment-card.vue'
 export default {
+  components:{
+    commentCard
+  },
     data : function(){
       return {
         id : '',
         title : "",
         description : "",
         shortDescription: "",
-        comments : "",
+        comments : [],
         qte : 0,
         stock : 99,
         sotckLevel : "text-info",
         price : 0,
-        image: ''
+        image: '',
+        commentName : '',
+        commentEmail: '',
+        commentMessage: ''
       }
     },
     created(){
@@ -373,6 +224,7 @@ export default {
       // get product id
       this.id = this.$route.params.id
       console.log('Product id: '+this.id);
+      this.getComment()
     },
     methods:{
         substractQte(){
@@ -399,6 +251,27 @@ export default {
               this.stock =  response.data.qte,
               this.sotckLevel =  "text-info",
               this.image = response.data.image
+          })
+        },
+        async getComment(){
+          let productId = this.$route.params.id
+          await axios.get(`${process.env.VUE_APP_ABS_API}/user/comment/${productId}`).then((response)=>{
+              if(response.status == 200){
+                this.comments = response.data
+              }
+          })
+        },
+        async addComment(){
+          await axios.post(`${process.env.VUE_APP_ABS_API}/user/comment`,JSON.stringify({
+              "name" : this.commentName,
+              "email" : this.commentEmail,
+              "comment" : this.commentMessage,
+              "usersId" : 1,
+              "products_id" : this.id
+          })).then((responce)=>{
+              if(responce.status == 200){
+                alert("Comment add successfully!");
+              }
           })
         }
     }
