@@ -105,7 +105,7 @@
               </form>
             </div>
           </div>
-          <div class="col d-grid gap-3 p-inline-end-5" @submit.prevent="handleSubmit">
+          <div class="col d-grid gap-3 p-inline-end-5" @submit.prevent = "handleSubmit">
             <div class="bg-white border p-4 shadow">
               <h3>Login:</h3>
               <div class="form-group">
@@ -114,7 +114,7 @@
                   type="text"
                   name="email"
                   placeholder="Email..."
-                  required v-model="email" />
+                  required v-model = "email" />
               </div>
               <div class="form-group">
                 <input
@@ -122,11 +122,11 @@
                   type="password"
                   name="password"
                   placeholder="Password..."
-                  required v-model="password"
+                  required v-model = "password"
                 />
               </div>
               <div class="form-group">
-                <button type="submit" class="btn btn-block btn-primary">
+                <button type="submit"  class="btn btn-block btn-primary">
                   Login
                 </button>
               </div>
@@ -138,25 +138,34 @@
     </div>
 </template>
 <script>
+import axios from "axios"
 export default {
+
+  
     name: 'Login',
-    data(){
+    data: function (){
     
     return {
-      register:{
+      login:{
         email: '',
         password: ''
       }
     }
     },
     method: {
-      handleSubmit(){
-        // const data = {
-        //   email : this.email,
-        //   password : this.password
-        // }
-        // console.log('data')
+     async handleSubmit(){
+      //  e.preventDefault();
+      //  console.log('submit')
+      
+       const response = await axios.post('login', {
+              email : this.email,
+              password : this.password
+            });
+            console.log(response)
+            this.$router.push('/login')
       }
+
+    // 
     }
     
 }
