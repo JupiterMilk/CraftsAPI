@@ -62,7 +62,7 @@
           <div class="col d-grid gap-1">
             <div class="bg-white border p-4 shadow">
               <h3>Signup:</h3>
-              <form>
+              <form @submit.prevent ="onSubmit($event)">
                 <div class="form-group">
                   <input
                     class="form-control"
@@ -70,6 +70,7 @@
                     name="name"
                     placeholder="Name..."
                     required
+                    v-model="register.name"
                   /><br />
                 </div>
                 <div class="form-group">
@@ -78,7 +79,7 @@
                     type="text"
                     name="password"
                     placeholder="Email..."
-                    required
+                    required v-model="register.email"
                   /><br />
                 </div>
                 <div class="form-group">
@@ -87,7 +88,7 @@
                     type="password"
                     name="email"
                     placeholder="Password..."
-                    required
+                    required v-model="register.password"
                   /><br />
                 </div>
                 <div class="form-group">
@@ -96,16 +97,16 @@
                     type="password"
                     name="Cpassword"
                     placeholder="Confirme password..."
-                    required
+                    required v-model="register.password"
                   /><br />
                 </div>
                 <div class="form-group">
-                  <button type="submit" class="btn btn-primary">Signup</button>
+                  <button type="submit" class="btn btn-primary" @click="signup()" >Signup</button>
                 </div>
               </form>
             </div>
           </div>
-          <div class="col d-grid gap-3 p-inline-end-5" @submit.prevent = "handleSubmit">
+          <div class="col d-grid gap-3 p-inline-end-5" @submit.prevent="onSubmit">
             <div class="bg-white border p-4 shadow">
               <h3>Login:</h3>
               <div class="form-group">
@@ -114,7 +115,7 @@
                   type="text"
                   name="email"
                   placeholder="Email..."
-                  required v-model = "email" />
+                  required v-model="login.email" />
               </div>
               <div class="form-group">
                 <input
@@ -122,11 +123,11 @@
                   type="password"
                   name="password"
                   placeholder="Password..."
-                  required v-model = "password"
+                  required v-model="login.password"
                 />
               </div>
               <div class="form-group">
-                <button type="submit"  class="btn btn-block btn-primary">
+                <button @click="handleSubmit()"  type="submit"  class="btn btn-block btn-primary">
                   Login
                 </button>
               </div>
@@ -138,35 +139,56 @@
     </div>
 </template>
 <script>
-import axios from "axios"
+
+  import axios from "axios"
 export default {
-
-  
-    name: 'Login',
-    data: function (){
-    
-    return {
-      login:{
-        email: '',
-        password: ''
+  data(){
+      return {
+        register:{
+          id: "" ,
+        name: "",
+        email: "",
+        password: "",
+        role: "",
+        phone: ""       
+        },
+        login:{
+          email: "",
+          password: "",
+        }
       }
-    }
+  },
+    methods: {
+      signup(){
+        axios.post(`${process.env.VUE_APP_ABS_API}/auth/signup`,{
+          id: this.register.id ,
+        name: this.register.name,
+        email: this.register.email,
+        password: this.register.password,
+        role: "user",
+        phone: "2345678"
+        
+        }).then((response) =>{
+          console.log(response.data.token)
+          // window.localStorage.setItem('token',response.data.token)
+        })
+      },
+      onSubmit(e){
+        e.preventDefault()
+        console.log("from onsubmit" , e)
+      },
+       handleSubmit(){
+       axios.post(`${process.env.VUE_APP_ABS_API}/auth/login`,({
+              email : this.login.email,
+              password : this.login.password
+        })).then((response) =>{
+          console.log(response.data.token)
+          window.localStorage.setItem('token',response.data.token)
+        })
+      }
     },
-    method: {
-     async handleSubmit(){
-      //  e.preventDefault();
-      //  console.log('submit')
-      
-       const response = await axios.post('login', {
-              email : this.email,
-              password : this.password
-            });
-            console.log(response)
-            this.$router.push('/login')
-      }
-
-    // 
+    created(){
+      console.log("from login component")
     }
-    
 }
 </script>
