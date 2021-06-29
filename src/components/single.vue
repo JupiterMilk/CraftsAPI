@@ -66,62 +66,11 @@
           <div class="row">
             <div class="col-6 p-5">
               <div class="m-0 row">
-                <div class="col-2">
-                  <div
-                    style="cursor:pointer;"
-                    class="mb-2 rounded shadow w-100"
-                  >
-                    <img
-                      src="/product-images-1.4c66486f.png"
-                      alt=""
-                      class="img img-responsive w-100"
-                    />
-                  </div>
-                  <div
-                    style="cursor:pointer;"
-                    class="mb-2 rounded shadow w-100"
-                  >
-                    <img
-                      src="/product-images-2.931f0e18.png"
-                      alt=""
-                      class="img img-responsive w-100"
-                    />
-                  </div>
-                  <div
-                    style="cursor:pointer;"
-                    class="mb-2 rounded shadow w-100"
-                  >
-                    <img
-                      src="/product-images-3.557947b4.png"
-                      alt=""
-                      class="img img-responsive w-100"
-                    />
-                  </div>
-                  <div
-                    style="cursor:pointer;"
-                    class="mb-2 rounded shadow w-100"
-                  >
-                    <img
-                      src="/product-images-4.9b16f918.png"
-                      alt=""
-                      class="img img-responsive w-100"
-                    />
-                  </div>
-                  <div
-                    style="cursor:pointer;"
-                    class="mb-2 rounded shadow w-100"
-                  >
-                    <img
-                      src="/product-images-5.84fd73ab.png"
-                      alt=""
-                      class="img img-responsive w-100"
-                    />
-                  </div>
-                </div>
-                <div class="col-10">
+                
+                <div class="col-12">
                   <div style="cursor:pointer;" class="product-image rounded">
                     <img
-                      src="/product.708685fd.png"
+                      :src="image"
                       class="img img-responsive shadow w-100"
                       alt=""
                     />
@@ -132,19 +81,15 @@
             <div class="col-6 py-5">
               <div class="path">
                 <a href="#">Home</a> > <a href="#">Shop</a> >
-                <a href="#">Dummy product</a>
+                <a href="#">{{ title }}</a>
               </div>
               <div class="p-title">
-                <h1 class="text-primary">Dummy product</h1>
+                <h1 class="text-primary">{{ title }}</h1>
               </div>
-              <div class="p-short-desc">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Necessitatibus, nulla? Officia numquam perferendis commodi sequi
-                sapiente, repudiandae, sed non cupiditate accusamus minima
-                omnis, quidem nisi enim repellat debitis. Aliquid, doloribus!
+              <div class="p-short-desc" v-html="shortDescription">
               </div>
               <div class="price">
-                <h1 class="display-3 text-danger"><b>356$</b></h1>
+                <h1 class="display-3 text-danger"><b>{{ price }}$</b></h1>
               </div>
               <div class="align-items-center d-flex mb-3 stock">
                 <div class="m-2 pick">
@@ -165,10 +110,10 @@
               </div>
               <div class="actions d-flex">
                 <a class="bg-blue btn btn-lg btn-primary m-2"
-                  ><i class="fa fa-shopping-cart"></i> Add to cart</a
+                  ><i class="fa fa-shopping-cart text-light"></i> Add to cart</a
                 >
                 <a class="btn btn-lg btn-warning m-2"
-                  ><i class="fa fa-shopping-cart"></i> Add to cart</a
+                  ><i class="fa fa-shopping-cart"></i> Order now</a
                 >
               </div>
             </div>
@@ -183,60 +128,7 @@
           <div class="row">
             <div class="col text-primary">
               <h1>Description:</h1>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
-                optio reprehenderit iure mollitia quam magni ea ab eum. Magni
-                libero iusto eaque sint dignissimos facilis nisi quisquam
-                exercitationem assumenda quibusdam?
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
-                optio reprehenderit iure mollitia quam magni ea ab eum. Magni
-                libero iusto eaque sint dignissimos facilis nisi quisquam
-                exercitationem assumenda quibusdam?
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
-                optio reprehenderit iure mollitia quam magni ea ab eum. Magni
-                libero iusto eaque sint dignissimos facilis nisi quisquam
-                exercitationem assumenda quibusdam?
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
-                optio reprehenderit iure mollitia quam magni ea ab eum. Magni
-                libero iusto eaque sint dignissimos facilis nisi quisquam
-                exercitationem assumenda quibusdam?
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
-                optio reprehenderit iure mollitia quam magni ea ab eum. Magni
-                libero iusto eaque sint dignissimos facilis nisi quisquam
-                exercitationem assumenda quibusdam?
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
-                optio reprehenderit iure mollitia quam magni ea ab eum. Magni
-                libero iusto eaque sint dignissimos facilis nisi quisquam
-                exercitationem assumenda quibusdam?
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
-                optio reprehenderit iure mollitia quam magni ea ab eum. Magni
-                libero iusto eaque sint dignissimos facilis nisi quisquam
-                exercitationem assumenda quibusdam?
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
-                optio reprehenderit iure mollitia quam magni ea ab eum. Magni
-                libero iusto eaque sint dignissimos facilis nisi quisquam
-                exercitationem assumenda quibusdam?
-              </p>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
-                optio reprehenderit iure mollitia quam magni ea ab eum. Magni
-                libero iusto eaque sint dignissimos facilis nisi quisquam
-                exercitationem assumenda quibusdam?
-              </p>
+              <div v-html="description"></div>
             </div>
           </div>
         </div>
@@ -455,19 +347,24 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
     data : function(){
       return {
         id : '',
         title : "",
         description : "",
+        shortDescription: "",
         comments : "",
         qte : 0,
         stock : 99,
-        sotckLevel : "text-info"
+        sotckLevel : "text-info",
+        price : 0,
+        image: ''
       }
     },
     created(){
+      this.getProductData()
       // Stock color manager
       if(this.stock <= 50) this.sotckLevel = "text-danger"
       if(this.stock > 50 && this.stock <= 100) this.sotckLevel = "text-warning"
@@ -478,13 +375,31 @@ export default {
       console.log('Product id: '+this.id);
     },
     methods:{
-        substractQte(id){
+        substractQte(){
           if(this.qte > 0){
             --this.qte;
           }
         },
         addQte(){
-          ++this.qte;
+          if(this.qte < this.stock) ++this.qte;
+        },
+        getShortDescription(descripiton){
+          if(descripiton.length > 130) descripiton = descripiton.substring(0,130)+"..."
+          return descripiton.replace( /(<([^>]+)>)/ig, '')
+        },
+        async getProductData(){
+          let productId = this.$route.params.id
+          await axios.get(`${process.env.VUE_APP_ABS_API}/customer/product/${productId}`).then((response)=>{
+            // console.log(response);
+              this.shortDescription = this.getShortDescription(response.data.description)
+              this.id =  response.data.id
+              this.title =  response.data.name
+              this.description =  response.data.description
+              this.price =  response.data.price,
+              this.stock =  response.data.qte,
+              this.sotckLevel =  "text-info",
+              this.image = response.data.image
+          })
         }
     }
 }

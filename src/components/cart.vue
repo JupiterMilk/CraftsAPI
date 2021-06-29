@@ -69,84 +69,9 @@
               <div class="row">
                 <div class="col-12 col-lg-7 col-md-12 d-flex">
                   <div class="card-body">
-                    <div class="list-paiment-body row">
-                      <div class="cart-paiment-img col-4 col-md-4 row">
-                        <img
-                          src="/Rectangle 37.a8e0979a.png"
-                          class="card-img-top h-100"
-                          alt="..."
-                        />
-                      </div>
-                      <div
-                        class="col-8 col-md-8 col-sm-8 d-flex justify-content-between mt-3"
-                      >
-                        <div class="col-sm-6">
-                          <h1 class="card-title mb-2">Dummy product title</h1>
-                          <p class="card-text mb-5">
-                            PRICE: <span class="price">500$</span>
-                          </p>
-                          <a href="#" class="text-danger"><u>Remove</u></a>
-                        </div>
-                        <div class="col-sm-2">
-                          <div class="cart-paiment-qte">2</div>
-                        </div>
-                        <div class="col-sm-2">
-                          <div class="price">1000$</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="list-paiment-body row">
-                      <div class="cart-paiment-img col-4 col-md-4 row">
-                        <img
-                          src="/Rectangle 37.a8e0979a.png"
-                          class="card-img-top h-100"
-                          alt="..."
-                        />
-                      </div>
-                      <div
-                        class="col-8 col-md-8 col-sm-8 d-flex justify-content-between mt-3"
-                      >
-                        <div class="col-sm-6">
-                          <h1 class="card-title mb-2">Dummy product title</h1>
-                          <p class="card-text mb-5">
-                            PRICE: <span class="price">500$</span>
-                          </p>
-                          <a href="#" class="text-danger"><u>Remove</u></a>
-                        </div>
-                        <div class="col-sm-2">
-                          <div class="cart-paiment-qte">2</div>
-                        </div>
-                        <div class="col-sm-2">
-                          <div class="price">1000$</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="list-paiment-body row">
-                      <div class="cart-paiment-img col-4 col-md-4 row">
-                        <img
-                          src="/Rectangle 37.a8e0979a.png"
-                          class="card-img-top h-100"
-                          alt="..."
-                        />
-                      </div>
-                      <div
-                        class="col-8 col-md-8 col-sm-8 d-flex justify-content-between mt-3"
-                      >
-                        <div class="col-sm-6">
-                          <h1 class="card-title mb-2">Dummy product title</h1>
-                          <p class="card-text mb-5">
-                            PRICE: <span class="price">500$</span>
-                          </p>
-                          <a href="#" class="text-danger"><u>Remove</u></a>
-                        </div>
-                        <div class="col-sm-2">
-                          <div class="cart-paiment-qte">2</div>
-                        </div>
-                        <div class="col-sm-2">
-                          <div class="price">1000$</div>
-                        </div>
-                      </div>
-                    </div>
+                    <Paiment id="1" title="fsdxvvdsg" price="4556" img="Rectangle 37.a8e0979a.png" />
+                   
+                  
                   </div>
                 </div>
                 <div class="col-lg-4 col-md-12 mb-3 mt-5">
@@ -180,6 +105,8 @@
 </template>
 
 <script>
+import Paiment from './core-components/cart-paiment.vue';
+
 export default {
   data : ()=>{
     return {
@@ -188,7 +115,12 @@ export default {
   },
   created(){
     
-  }
+  
+  },
+    components:{
+      Paiment
+    }
+
 }
 </script>
 
