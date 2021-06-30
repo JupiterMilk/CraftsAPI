@@ -61,12 +61,12 @@ else
     yarn
     echo "==> INSTALLING DONE"
     echo "==> SETUP ENV FILE"
-    if [ -f ".env" ]; then
+    if [ -f ".env.development" ]; then
         echo ".env file already exists."
     else
         echo ".env does not exist."
         echo "creating one for your right now "
-        cp ".env.local" ".env"
+        cp ".env.development.local" ".env.development"
     fi
     echo "==> YOUR DONE BRO"
     echo "==> TRY TO START NOW"
