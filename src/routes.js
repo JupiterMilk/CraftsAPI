@@ -26,13 +26,14 @@ const routes = [
         component: VerifyEmail
     },
     {
-        path : '/product/:id',
+        path: '/product/:id',
         component: single
     },
     {
-        path : '/cart',
+        path: '/cart',
         component: cart
     }
 ]
+
 
 export default routes

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div v-if="isHidden == true" class="item-parent">
         <div class="item">
             <div class="bg-white product-card">
             <div class="thumbnail">
@@ -29,16 +29,26 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
     props:{
         id:Number,
-        title:String,
-        description:String,
-        imageUrl:String,
-        isSale:Boolean
+    },
+    data:()=>{
+        return {
+            title : "",
+            description: "",
+            imageUrl: '',
+            isSale : '',
+            isHidden: false
+        }
     },
     created(){
         // window.localStorage.removeItem('cart')
+        
+    },
+    mounted(){
+        this.getProductData()
     },
     methods: {
         addtoCart(id){
@@ -72,11 +82,30 @@ export default {
 
             // alert('Prodcut added to cart successfully!')
 
-        }
+        },
+        getShortText(descripiton,size){
+          if(descripiton.length > size) descripiton = descripiton.substring(0,size)+"..."
+          return descripiton.replace( /(<([^>]+)>)/ig, '')
+        },
+        async getProductData(){
+          let id = this.id
+          await axios.get(`${process.env.VUE_APP_ABS_API}/customer/product/${id}`).then((response)=>{
+              if(response.status == 200){
+                    this.isHidden = true
+                    this.description = this.getShortText(response.data.description,30)
+                    this.id =  response.data.id
+                    this.title =  this.getShortText(response.data.name,15)
+                    this.imageUrl = response.data.image
+              }
+          })
+        },
     },
 }
 </script>
 
 <style lang="css">
-    
+
+    .item-parent,.item-parent .item,.item-parent .item > div{
+        height:100%
+    }
 </style>
