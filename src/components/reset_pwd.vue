@@ -5,51 +5,7 @@
       <div class="container">
         <div class="row">
           <div class="col">
-            <nav class="navbar navbar-expand-lg">
-              <a class="navbar-brand" href="#"
-                ><img
-                  class="d-md-block d-none"
-                  src="/logo.2da8e07c.png"
-                  alt="logo"
-              /></a>
-              <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="m-auto mb-2 mb-lg-0 navbar-nav">
-                  <li class="mx-3 nav-item">
-                    <a class="active nav-link" aria-current="page" href="#"
-                      >Home</a
-                    >
-                  </li>
-                  <li class="mx-3 nav-item">
-                    <a class="nav-link" href="#">Shop</a>
-                  </li>
-                  <li class="mx-3 nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                  </li>
-                  <li class="mx-3 nav-item">
-                    <a class="nav-link" href="#">About us</a>
-                  </li>
-                </ul>
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="cart-icon mx-4 nav-link text-red" href="#"
-                      ><i class="fa fa-shopping-cart"></i
-                      ><span class="cart-badge">1</span></a
-                    >
-                  </li>
-                </ul>
-              </div>
-            </nav>
+            <Menu dataActive="home"/>
           </div>
         </div>
       </div>
@@ -105,22 +61,26 @@
 </template>
 <script>
 import axios from "axios"
+import Menu from '@/components/core-components/menu.vue'
 export default {
     data(){
-    return{
-      password:'',
-      rePassword:''
+      return{
+        password:'',
+        rePassword:''
+      }
+    },
+    methods:{
+      passwordReset(){
+        axios.post(`${process.env.VUE_APP_ABS_API}/auth/reset_pwd`,{
+            password: this.password,
+            rePassword: this.rePassword,
+        }).then((response)=>{
+          console.log(response.data.token)
+        })
+      }
+    },
+    components:{
+      Menu
     }
-  },
-  methods:{
-    passwordReset(){
-      axios.post(`${process.env.VUE_APP_ABS_API}/auth/reset_pwd`,{
-          password: this.password,
-          rePassword: this.rePassword,
-      }).then((response)=>{
-        console.log(response.data.token)
-      })
-    }
-  }
 }
 </script>

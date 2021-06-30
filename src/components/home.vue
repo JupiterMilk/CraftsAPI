@@ -151,7 +151,7 @@
         <div class="container">
           <div class="row">
               <div class="grid">
-                <productCard :isSale="prodcut.sale" :title="prodcut.name" :description="prodcut.description" :imageUrl="prodcut.image" v-for="(prodcut,index) in products" :key="index" :id="prodcut.id"/>
+                <productCard v-for="(prodcut,index) in products" :key="index" :id="prodcut.id"/>
               </div>
           </div>
         </div>
@@ -248,7 +248,7 @@ export default {
   },
   methods:{
     async getProductData(){
-      await axios.get(`${process.env.VUE_APP_ABS_API}/customer/product/`)
+      await axios.get(`${process.env.VUE_APP_ABS_API}/customer/product/all/12`)
       .then( (response) => {
         // console.log(response.data);
         this.products = response.data
