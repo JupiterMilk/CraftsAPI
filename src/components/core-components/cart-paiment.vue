@@ -55,8 +55,8 @@ export default {
           if(response.status == 200){
             this.image = response.data.image
             this.title = response.data.title
-            this.price = response.data.price
-            this.totalPrice = parseFloat(this.qte) * parseFloat(response.data.price)
+            this.price = response.data.price.replace('$','')
+            this.totalPrice = parseFloat(this.qte) * parseFloat(this.price)
             this.parentHandler(this.totalPrice)
           }
         })
