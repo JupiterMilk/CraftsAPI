@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div @submit.prevent ="onSubmit($event)">
         <header class="login-header vh-100 w-100">
       <img class="bg-effect" alt="" />
       <div class="container">
@@ -71,19 +71,19 @@
               <div class="form-group">
                 <input
                   class="form-control"
-                  type="text"
-                  name="email"
-                  placeholder="Email..."
-                  required
+                  type="password"
+                  name="password"
+                  placeholder="Password"
+                  required v-model="password"
                 />
               </div>
               <div class="form-group">
                 <input
                   class="form-control"
                   type="password"
-                  name="password"
-                  placeholder="Password..."
-                  required
+                  name="re-password"
+                  placeholder="Confirm Password"
+                  required v-model="rePassword"
                 />
               </div>
               <div
@@ -92,7 +92,7 @@
                 <a href="#" style="color:#00f;margin:top 3px;"
                   >Remember password?</a
                 >
-                <button type="submit" class="btn btn-block btn-lg btn-primary">
+                <button type="submit" class="btn btn-block btn-lg btn-primary" @click="passwordReset()">
                   Verify
                 </button>
               </div>
@@ -104,7 +104,23 @@
     </div>    
 </template>
 <script>
+import axios from "axios"
 export default {
-    
+    data(){
+    return{
+      password:'',
+      rePassword:''
+    }
+  },
+  methods:{
+    passwordReset(){
+      axios.post(`${process.env.VUE_APP_ABS_API}/auth/reset_pwd`,{
+          password: this.password,
+          rePassword: this.rePassword,
+      }).then((response)=>{
+        console.log(response.data.token)
+      })
+    }
+  }
 }
 </script>

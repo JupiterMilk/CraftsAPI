@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div  @submit.prevent ="onSubmit($event)">
          <header class="login-header vh-100 w-100">
       <img class="bg-effect" alt="" />
       <div class="container">
@@ -74,25 +74,25 @@
                   type="text"
                   name="email"
                   placeholder="Email..."
-                  required
+                  required v-model="email"
                 />
               </div>
-              <div class="form-group">
+              <!-- <div class="form-group">
                 <input
                   class="form-control"
                   type="password"
                   name="password"
                   placeholder="Password..."
-                  required
+                  required v-model="password"
                 />
-              </div>
+              </div> -->
               <div
                 class="align-items-center d-flex flex-row form-group justify-content-between"
               >
                 <a href="#" style="color:#00f;margin:top 3px;"
                   >Remember password?</a
                 >
-                <button type="submit" class="btn btn-block btn-lg btn-primary">
+                <button type="submit" class="btn btn-block btn-lg btn-primary"@click="verifyEmail()">
                   Verify
                 </button>
               </div>
@@ -103,3 +103,26 @@
     </header>
     </div>   
 </template>
+<script>
+import axios from "axios"
+export default {
+    data(){
+    return{
+      email:'',
+      // password:''
+    }
+  },
+  methods:{
+    verifyEmail(){
+      if(this.email.length > 0){
+        axios.post(`${process.env.VUE_APP_ABS_API}/password/verify`,{
+            email: this.email,
+            // password: this.password
+        }).then((response)=>{
+          console.log(response.data.token)
+        })
+      }
+    }
+  }
+}
+</script>
