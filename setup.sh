@@ -32,7 +32,7 @@ if [ "$version" != "v14.15.5" ]; then
     echo "==> Installing node version manager (NVM)."
     rm -rf ~/.nvm
     export NVM_DIR=
-    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
+    bash scripts/nvm.sh
     source ~/.nvm/nvm.sh
     echo "==> make this version system default"
     load-nvmrc
