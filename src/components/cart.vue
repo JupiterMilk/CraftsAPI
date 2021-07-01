@@ -52,7 +52,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+// import axios from 'axios';
 import Menu from '@/components/core-components/menu.vue';
 // import axios from 'axios';
 import Paiment from './core-components/cart-paiment.vue';

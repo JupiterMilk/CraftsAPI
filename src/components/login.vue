@@ -95,6 +95,7 @@
     </div>
 </template>
 <script>
+import axios from 'axios'
 import Menu from '@/components/core-components/menu.vue';
 export default {
     components:{
@@ -128,7 +129,7 @@ export default {
         
         }).then((response) =>{
           console.log(response.data.token)
-          // window.localStorage.setItem('token',response.data.token)
+          
         })
       },
       onSubmit(e){

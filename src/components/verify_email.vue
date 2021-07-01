@@ -74,14 +74,14 @@ export default {
   },
   methods:{
       verifyEmail(){
-        if(this.email.length > 0){
+        // if(this.email.length > 0){
           axios.post(`${process.env.VUE_APP_ABS_API}/password/verify`,{
               email: this.email,
               // password: this.password
           }).then((response)=>{
             console.log(response.data.token)
           })
-        }
+        // }
       }
     }
 }
