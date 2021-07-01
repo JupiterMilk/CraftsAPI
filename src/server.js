@@ -7,9 +7,9 @@ const { databaseURL, port } = require('@config/index')
 const cors = require('cors')
 // const bp = require('body-parser')
 
-const corsOptions = {
-  origin: 'http://localhost:8080',
-}
+// const corsOptions = {
+//   origin: 'http://localhost:8080',
+// }
 // const corsOptions = {
 //   origin: (origin, callback) => {
 //     if (whitelist.indexOf(origin) !== -1) {
@@ -22,7 +22,7 @@ const corsOptions = {
 // app.use(bp.json())
 // app.use(bp.urlencoded({ extended: true }))
 
-app.use(cors(corsOptions))
+app.use(cors())
 app.set('json spaces', 2)
 
 app.get('/', (req, res) => {
