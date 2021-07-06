@@ -46,11 +46,11 @@ export default {
         totalPrice : 0.00,
       }
     },
-    created(qte){
-      this.getProductData(qte)
+    created(){
+      this.getProductData()
     },
     methods:{
-      async getProductData(qte){
+      async getProductData(){
         await axios.get(`${process.env.VUE_APP_ABS_API}/customer/product/${this.id}`).then((response)=>{
           if(response.status == 200){
             this.image = response.data.image
