@@ -1,9 +1,9 @@
 <template>
-    <div>
-        <div class="container">
+  <div>
+    <div class="container">
       <div class="row">
         <div class="col">
-          <Menu dataActive="home"/>
+          <Menu dataActive="home" />
         </div>
       </div>
     </div>
@@ -54,7 +54,14 @@
           <div class="row">
             <div class="col">
               <div class="grid">
-                <categotyCard v-for="(category,index) in categories" :key="index" :title="category.name" :description="category.description" :image="category.image" :id="category.id" />
+                <categotyCard
+                  v-for="(category, index) in categories"
+                  :key="index"
+                  :title="category.name"
+                  :description="category.description"
+                  :image="category.image"
+                  :id="category.id"
+                />
                 <!-- <div class="item">
                   <img
                     class="img img-responsive w-100"
@@ -130,7 +137,7 @@
       </section>
       <section
         class="home-products my-5"
-        style="background-image:url(/home-products.2948dc6d.png);"
+        style="background-image: url(/home-products.2948dc6d.png)"
       >
         <div class="container">
           <div class="row">
@@ -150,9 +157,13 @@
         </div>
         <div class="container">
           <div class="row">
-              <div class="grid">
-                <productCard v-for="(prodcut,index) in products" :key="index" :id="prodcut.id"/>
-              </div>
+            <div class="grid">
+              <productCard
+                v-for="(prodcut, index) in products"
+                :key="index"
+                :id="prodcut.id"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -223,45 +234,47 @@
         </div>
       </section> -->
     </main>
-    </div>
+  </div>
 </template>
 <script>
-import axios from 'axios'
-import Menu from '@/components/core-components/menu.vue';
-import productCard from '@/components/core-components/product-card';
-import categotyCard from '@/components/core-components/category-card';
+import axios from "axios";
+import Menu from "@/components/core-components/menu.vue";
+import productCard from "@/components/core-components/product-card";
+import categotyCard from "@/components/core-components/category-card";
 export default {
-  data : ()=>{
+  data: () => {
     return {
-      products : [],
-      categories : []
-    }
+      products: [],
+      categories: [],
+    };
   },
-    components:{
-      Menu,
-      productCard,
-      categotyCard
+  components: {
+    Menu,
+    productCard,
+    categotyCard,
   },
   created() {
-    this.getProductData()
-    this.getCategories()
+    this.getProductData();
+    this.getCategories();
   },
-  methods:{
-    async getProductData(){
-      await axios.get(`${process.env.VUE_APP_ABS_API}/customer/product/all/12`)
-      .then( (response) => {
-        // console.log(response.data);
-        this.products = response.data
-      })
+  methods: {
+    async getProductData() {
+      await axios
+        .get(`${process.env.VUE_APP_ABS_API}/customer/product/all/12`)
+        .then((response) => {
+          // console.log(response.data);
+          this.products = response.data;
+        });
     },
-    async getCategories(){
-      await axios.get(`${process.env.VUE_APP_ABS_API}/categories/all/5`).then((responce) =>{
-        this.categories = responce.data
-      })
-    }
-  }
-}
+    async getCategories() {
+      await axios
+        .get(`${process.env.VUE_APP_ABS_API}/categories/all/5`)
+        .then((responce) => {
+          this.categories = responce.data;
+        });
+    },
+  },
+};
 </script>
 <style lang="css">
-    
 </style>

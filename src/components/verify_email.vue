@@ -1,23 +1,30 @@
 <template>
-    <div  @submit.prevent ="onSubmit($event)">
-         <header class="login-header vh-100 w-100">
+  <div @submit.prevent="onSubmit($event)">
+    <header class="login-header vh-100 w-100">
       <img class="bg-effect" alt="" />
       <div class="container">
         <div class="row">
           <div class="col">
-            <Menu dataActive="home"/>
+            <Menu dataActive="home" />
           </div>
         </div>
       </div>
       <img
-        style="position:fixed;left:0;bottom:0;height:80%;z-index:-1;"
+        style="position: fixed; left: 0; bottom: 0; height: 80%; z-index: -1"
         src="/home-header-pattern.e8d1e471.png"
       />
       <div class="container">
         <div class="mt-5 row">
           <div class="col d-grid d-md-block d-none gap-1">
             <img
-              style="position:fixed;left:48px;bottom:115px;height:70%;z-index:-1;margin-top:10px;"
+              style="
+                position: fixed;
+                left: 48px;
+                bottom: 115px;
+                height: 70%;
+                z-index: -1;
+                margin-top: 10px;
+              "
               src="/verify-email1.c1cdb937.png"
             />
           </div>
@@ -30,7 +37,8 @@
                   type="text"
                   name="email"
                   placeholder="Email..."
-                  required v-model="email"
+                  required
+                  v-model="email"
                 />
               </div>
               <!-- <div class="form-group">
@@ -43,12 +51,22 @@
                 />
               </div> -->
               <div
-                class="align-items-center d-flex flex-row form-group justify-content-between"
+                class="
+                  align-items-center
+                  d-flex
+                  flex-row
+                  form-group
+                  justify-content-between
+                "
               >
-                <a href="#" style="color:#00f;margin:top 3px;"
+                <a href="#" style="color: #00f; margin: top 3px"
                   >Remember password?</a
                 >
-                <button type="submit" class="btn btn-block btn-lg btn-primary" @click="verifyEmail()">
+                <button
+                  type="submit"
+                  class="btn btn-block btn-lg btn-primary"
+                  @click="verifyEmail()"
+                >
                   Verify
                 </button>
               </div>
@@ -57,32 +75,34 @@
         </div>
       </div>
     </header>
-    </div>   
+  </div>
 </template>
 <script>
-import axios from "axios"
-import Menu from '@/components/core-components/menu.vue';
+import axios from "axios";
+import Menu from "@/components/core-components/menu.vue";
 export default {
-  data:()=>{
-    return{
-      email:'',
+  data: () => {
+    return {
+      email: "",
       // password:''
-    }
+    };
   },
-  components:{
-    Menu
+  components: {
+    Menu,
   },
-  methods:{
-      verifyEmail(){
-        // if(this.email.length > 0){
-          axios.post(`${process.env.VUE_APP_ABS_API}/password/verify`,{
-              email: this.email,
-              // password: this.password
-          }).then((response)=>{
-            console.log(response.data.token)
-          })
-        // }
-      }
-    }
-}
+  methods: {
+    verifyEmail() {
+      // if(this.email.length > 0){
+      axios
+        .post(`${process.env.VUE_APP_ABS_API}/password/verify`, {
+          email: this.email,
+          // password: this.password
+        })
+        .then((response) => {
+          console.log(response.data.token);
+        });
+      // }
+    },
+  },
+};
 </script>
