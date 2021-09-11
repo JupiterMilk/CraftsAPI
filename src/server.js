@@ -1,32 +1,30 @@
-const app = require('app')
-const userRouter = require('@routes/user.routes.js')
-const customerRouter = require('@routes/customer.routes.js')
-const categoriesRouter = require('@routes/categories.routes.js')
-const authRouter = require('@routes/auth.routes.js')
-const { databaseURL, port } = require('@config/index')
-const cors = require('cors')
-// const bp = require('body-parser')
+const app = require('app'),
+  userRouter = require('@routes/user.routes.js'),
+  customerRouter = require('@routes/customer.routes.js'),
+  categoriesRouter = require('@routes/categories.routes.js'),
+  authRouter = require('@routes/auth.routes.js'),
+  { port: appPort } = require('@config/index'),
+  cors = require('cors'),
+  { normalizePort, onError } = require('@utils/index')
 
-// const corsOptions = {
-//   origin: 'http://localhost:8080',
-// }
-// const corsOptions = {
-//   origin: (origin, callback) => {
-//     if (whitelist.indexOf(origin) !== -1) {
-//       callback(null, true)
-//     } else {
-//       callback(new Error())
-//     }
-//   }
-// }
-// app.use(bp.json())
-// app.use(bp.urlencoded({ extended: true }))
+require('dotenv')
 
-app.use(cors())
+const port = normalizePort(appPort || '3005')
+
+app.set('port', port)
+
+const corsOptions = {
+  origin: process.env.ORIGIN_URL,
+  optionsSuccessStatus: 200,
+}
+
+app.enable('trust proxy')
+
+app.use(cors(corsOptions))
 app.set('json spaces', 2)
 
 app.get('/', (req, res) => {
-  res.status(200).send('hello mother fucker how are you doing ')
+  res.status(200).send('Welcome to this API')
 })
 
 app.use('/user', userRouter)
@@ -37,7 +35,10 @@ app.use('/categories', categoriesRouter)
 
 app.use('/auth', authRouter)
 
-app.listen(port, () => {
-  console.log(`app listening on port http://${databaseURL}:${port}`)
+const server = app.listen(port, () => {
+  const { address: host, port: _port } = server.address()
+  console.log(`app listening on port http://${host}:${_port}`)
   console.log('Press Ctrl+C to quit.')
 })
+
+server.on('error', onError)

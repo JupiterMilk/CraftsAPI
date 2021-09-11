@@ -3,19 +3,4 @@
     "editor.codeActionsOnSave": {
         "source.fixAll.eslint": true
     },
-    "sqltools.connections": [
-        {
-            "mysqlOptions": {
-                "authProtocol": "default"
-            },
-            "previewLimit": 50,
-            "server": "localhost",
-            "port": 3306,
-            "driver": "MySQL",
-            "name": "crafts_api",
-            "database": "craft_api",
-            "username": "root",
-            "password": "XtByqo%asj81CJmM[dfC"
-        }
-    ]
 }
